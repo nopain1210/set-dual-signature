@@ -33,7 +33,7 @@ func copyWithLeftPad(dest, src []byte) {
 	copy(dest[numPaddingBytes:], src)
 }
 
-func RSAPrivateEncrypt(privKey *rsa.PrivateKey, msg []byte) ([]byte, error) {
+func RsaPrivateEncrypt(privKey *rsa.PrivateKey, msg []byte) ([]byte, error) {
 	k := (privKey.N.BitLen() + 7) / 8
 	if len(msg) > k-11 {
 		return nil, rsa.ErrMessageTooLong

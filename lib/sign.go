@@ -40,7 +40,7 @@ func Sign(piFile string, oiFile string, kpcFile string) {
 	if err != nil {
 		pterm.Fatal.Printf("Error while reading private key: %s", err)
 	}
-	signature, err := RSAPrivateEncrypt(privKey, pomd[:])
+	signature, err := RsaPrivateEncrypt(privKey, pomd[:])
 	if err != nil {
 		pterm.Fatal.Printf("Error while encrypting: %s", err)
 	}
